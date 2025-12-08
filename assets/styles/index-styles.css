@@ -1,8 +1,9 @@
-/* Minecraft Theme Styles */
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+﻿/* Minecraft Theme Styles */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600&display=swap');
 
 :root {
-    --mc-grass: #5b8039;
+    --mc-grass: #7cbd6b;
+    --mc-green: #6cc349;
     --mc-dirt: #8b5e3c;
     --mc-stone: #7d7d7d;
     --mc-bedrock: #262626;
@@ -13,17 +14,21 @@
     --mc-shadow: rgba(0, 0, 0, 0.6);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'VT323', monospace;
+    font-family: 'Pixelify Sans', cursive;
     background-color: #1a1a1a;
     color: var(--mc-text);
-    font-size: 1.2rem;
+    font-size: 1rem;
     overflow-x: hidden;
 }
 
 /* Pixel Art Utilities */
 .pixel-font {
-    font-family: 'VT323', monospace;
+    font-family: 'Pixelify Sans', cursive;
 }
 
 .pixel-borders {
@@ -37,27 +42,53 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-bottom: 4px solid var(--mc-dirt);
+    background: linear-gradient(to bottom, rgba(0,0,0,1.0) 5%, rgba(0,0,0,0.4) 100%);
     padding: 1rem 0;
 }
 
 .navbar-brand img {
-    image-rendering: pixelated;
+    image-rendering: smooth;
     height: 40px;
 }
 
 .nav-link {
     color: var(--mc-text) !important;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     text-shadow: 2px 2px 0 #000;
     transition: color 0.2s;
+    font-weight: 500;
 }
 
 .nav-link:hover {
-    color: var(--mc-gold) !important;
+    color: var(--mc-grass) !important;
     text-shadow: 2px 2px 0 #3f3f3f;
+}
+
+.dropdown-menu {
+    background-color: #2a2a2a;
+    border: 2px solid var(--mc-shadow);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
+    padding: 0;
+    margin-top: 10px;
+    min-width: 200px;
+}
+
+.dropdown-item {
+    color: var(--mc-text);
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    transition: background-color 0.2s, color 0.2s;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.dropdown-item:hover, .dropdown-item:focus{
+    background-color: var(--mc-grass);
+    color: black;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
 }
 
 /* Hero Section */
@@ -65,40 +96,76 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/mc-principal-portada.png');
     background-size: cover;
     background-position: center;
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
-    image-rendering: pixelated;
+    image-rendering: smooth;
 }
 
-.hero-title {
-    font-size: 5rem;
-    color: var(--mc-text);
-    text-shadow: 4px 4px 0 #000;
-    margin-bottom: 1rem;
-    line-height: 1;
-}
+/* Removed .hero-title styles as the element was removed */
 
 .hero-subtitle {
-    font-size: 2rem;
-    text-shadow: 2px 2px 0 #000;
-    margin-bottom: 2rem;
+    font-size: 2rem; /* Increased size for better impact without title */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    margin-bottom: 3rem;
+    font-weight: 500;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Minecraft Buttons */
+/* Glassmorphism Buttons for Hero */
+.hero-section .btn-minecraft {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--mc-text);
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1); /* Subtle inner border */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    transition: all 0.3s ease;
+    margin: 10px;
+    padding: 15px 35px;
+    font-size: 1.3rem;
+    border-radius: 8px;
+}
+
+.hero-section .btn-minecraft:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 8px 15px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    color: var(--mc-grass);
+    border-color: var(--mc-grass);
+}
+
+.hero-section .btn-minecraft:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Keep original buttons for other sections if needed, or override globally. 
+   The above specific selector handles the hero section requirement. */
+
+/* Minecraft Buttons (Global/Fallback) */
 .btn-minecraft {
     background-color: var(--mc-grass);
     color: white;
     border: none;
-    padding: 15px 30px;
-    font-size: 1.8rem;
+    padding: 12px 25px;
+    font-size: 1.2rem;
     text-transform: uppercase;
     position: relative;
     cursor: pointer;
     transition: transform 0.1s;
+    text-decoration: none;
+    display: inline-block;
     
     /* Voxel/3D Effect using box-shadow */
     box-shadow: 
@@ -133,13 +200,11 @@ body {
 
 /* Features Section */
 .features-section {
-    background-color: #1a1a1a;
-    background-image: 
-        linear-gradient(335deg, rgba(0,0,0,0.1) 23px, transparent 23px),
-        linear-gradient(155deg, rgba(0,0,0,0.1) 23px, transparent 23px),
-        linear-gradient(335deg, rgba(0,0,0,0.1) 23px, transparent 23px),
-        linear-gradient(155deg, rgba(0,0,0,0.1) 23px, transparent 23px);
-    background-size: 58px 58px;
+    background-image: url('../images/mc-texture-dirt.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     padding: 5rem 0;
 }
 
@@ -161,389 +226,128 @@ body {
     transform: translateY(-10px);
 }
 
-/* News Section & Carousel */
-.news-section {
-    background-color: #241c15; /* Dark Dirt Color */
-    background-image: 
-        linear-gradient(rgba(255,255,255,0.03) 2px, transparent 2px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 2px, transparent 2px);
-    background-size: 32px 32px;
-    padding: 5rem 0;
-    border-top: 4px solid #5b8039; /* Grass top border */
-    border-bottom: 4px solid #000;
+/* Carousel Styles */
+.mc-carousel {
+    border: 4px solid #000;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Modern glass effect */
+    padding-bottom: 10px;
     position: relative;
 }
 
-/* Add a grass layer on top */
-.news-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 16px;
-    background-color: #5b8039;
-    background-image: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1));
-    background-size: 20px 20px;
-}
-
-/* New News Card Style (Grid Look) */
-.news-card-v2 {
-    position: relative;
-    background-color: #1a1a1a;
-    height: 320px;
-    border: none;
-    transition: transform 0.2s;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.news-card-v2:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    outline: 4px solid var(--mc-grass);
-}
-
-.news-card-v2 img {
-    width: 100%;
-    height: 60%;
+.mc-carousel .carousel-item img {
+    height: 400px;
     object-fit: cover;
     image-rendering: pixelated;
+    opacity: 1;
+    border-bottom: 4px solid #000;
 }
 
-.news-card-content {
-    padding: 15px;
-    background-color: #1a1a1a;
-    height: 40%;
-    position: relative;
-}
-
-.news-tag {
-    background-color: #fff;
-    color: #000;
-    font-weight: bold;
-    font-size: 0.8rem;
-    padding: 2px 6px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 8px;
-    font-family: sans-serif; /* More readable for small tag */
-}
-
-.news-card-title {
-    color: #fff;
-    font-size: 1.2rem;
-    line-height: 1.2;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.news-card-subtitle {
-    color: #aaa;
-    font-size: 0.9rem;
-}
-
-/* Trailers Section */
-.trailers-section {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/mc-biome-hero-banner.png');
-    background-size: cover;
-    background-position: center;
-    padding: 5rem 0;
-    text-align: center;
-    border-top: 4px solid #000;
-}
-
-.video-container {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    border: 8px solid #000;
-    box-shadow: 10px 10px 0 rgba(0,0,0,0.5);
-    background: #000;
-}
-
-.video-thumbnail {
+.mc-caption {
+    position: static;
     width: 100%;
-    display: block;
-    opacity: 0.7;
-    transition: opacity 0.3s;
+    background-color: transparent;
+    border: none;
+    padding: 20px 120px 20px 20px; /* Right padding for arrows */
+    box-shadow: none;
+    text-align: left; /* Left aligned as per image */
 }
 
-.video-container:hover .video-thumbnail {
+.mc-caption h3 {
+    color: var(--mc-text); /* White text */
+    text-shadow: none;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+    letter-spacing: normal;
+}
+
+.mc-caption p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    font-size: 1rem;
+    text-shadow: none;
+    margin-bottom: 0;
+    color: #ccc;
+    max-width: 100%;
+    line-height: 1.4;
+}
+
+/* Custom Navigation Arrows */
+.carousel-controls-custom {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.btn-nav-arrow {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s, color 0.2s;
+    opacity: 0.8;
+}
+
+.btn-nav-arrow:hover {
+    transform: scale(1.2);
+    color: var(--mc-diamond);
     opacity: 1;
 }
 
-.play-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background-color: var(--mc-grass);
-    border: 4px solid #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 4px 4px 0 #000;
-}
-
-.play-btn::after {
-    content: '';
-    width: 0; 
-    height: 0; 
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 25px solid #fff;
-    margin-left: 5px;
-}
-
-.play-btn:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-    background-color: #6da146;
-}
-
-/* Features Section */
-.features-section {
-    background-color: #1a1a1a;
-    background-image: 
-        linear-gradient(335deg, rgba(0,0,0,0.1) 23px, transparent 23px),
-        linear-gradient(155deg, rgba(0,0,0,0.1) 23px, transparent 23px),
-        linear-gradient(335deg, rgba(0,0,0,0.1) 23px, transparent 23px),
-        linear-gradient(155deg, rgba(0,0,0,0.1) 23px, transparent 23px);
-    background-size: 58px 58px;
-    padding: 5rem 0;
-}
-
-.mc-card {
-    background-color: #c6c6c6;
-    border: 4px solid #000;
-    padding: 20px;
-    height: 100%;
-    position: relative;
-    transition: transform 0.3s;
-    
-    /* Inventory Slot Look */
-    box-shadow: 
-        inset 4px 4px 0px 0px #fff,
-        inset -4px -4px 0px 0px #555;
-}
-
-.mc-card:hover {
-    transform: translateY(-10px);
+/* Hide default indicators since we use arrows now */
+.mc-carousel .carousel-indicators {
+    display: none;
 }
 
 /* News Section & Carousel */
 .news-section {
-    background-color: #241c15; /* Dark Dirt Color */
-    background-image: 
-        linear-gradient(rgba(255,255,255,0.03) 2px, transparent 2px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 2px, transparent 2px);
-    background-size: 32px 32px;
-    padding: 5rem 0;
-    border-top: 4px solid #5b8039; /* Grass top border */
-    border-bottom: 4px solid #000;
-    position: relative;
-}
-
-/* Add a grass layer on top */
-.news-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 16px;
-    background-color: #5b8039;
-    background-image: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1));
-    background-size: 20px 20px;
-}
-
-/* New News Card Style (Grid Look) */
-.news-card-v2 {
-    position: relative;
-    background-color: #1a1a1a;
-    height: 320px;
-    border: none;
-    transition: transform 0.2s;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.news-card-v2:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    outline: 4px solid var(--mc-grass);
-}
-
-.news-card-v2 img {
-    width: 100%;
-    height: 60%;
-    object-fit: cover;
-    image-rendering: pixelated;
-}
-
-.news-card-content {
-    padding: 15px;
-    background-color: #1a1a1a;
-    height: 40%;
-    position: relative;
-}
-
-.news-tag {
-    background-color: #fff;
-    color: #000;
-    font-weight: bold;
-    font-size: 0.8rem;
-    padding: 2px 6px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 8px;
-    font-family: sans-serif; /* More readable for small tag */
-}
-
-.news-card-title {
-    color: #fff;
-    font-size: 1.2rem;
-    line-height: 1.2;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.news-card-subtitle {
-    color: #aaa;
-    font-size: 0.9rem;
-}
-
-/* Trailers Section */
-.trailers-section {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/mc-biome-hero-banner.png');
-    background-size: cover;
+    background-image: url('../images/mc-texture-stone.jpg');
+    background-repeat: repeat;
     background-position: center;
+    background-size: fixed;
+    background-attachment: fixed;
     padding: 5rem 0;
-    text-align: center;
-    border-top: 4px solid #000;
-}
-
-.video-container {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    border: 8px solid #000;
-    box-shadow: 10px 10px 0 rgba(0,0,0,0.5);
-    background: #000;
-}
-
-.video-thumbnail {
-    width: 100%;
-    display: block;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
-
-.video-container:hover .video-thumbnail {
-    opacity: 1;
-}
-
-.play-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background-color: var(--mc-grass);
-    border: 4px solid #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 4px 4px 0 #000;
-}
-
-.play-btn::after {
-    content: '';
-    width: 0; 
-    height: 0; 
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 25px solid #fff;
-    margin-left: 5px;
-}
-
-.play-btn:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-    background-color: #6da146;
-}
-
-/* Features Section */
-.features-section {
-    background-color: #1a1a1a;
-    background-image: 
-        linear-gradient(335deg, rgba(0,0,0,0.1) 23px, transparent 23px),
-        linear-gradient(155deg, rgba(0,0,0,0.1) 23px, transparent 23px),
-        linear-gradient(335deg, rgba(0,0,0,0.1) 23px, transparent 23px),
-        linear-gradient(155deg, rgba(0,0,0,0.1) 23px, transparent 23px);
-    background-size: 58px 58px;
-    padding: 5rem 0;
-}
-
-.mc-card {
-    background-color: #c6c6c6;
-    border: 4px solid #000;
-    padding: 20px;
-    height: 100%;
-    position: relative;
-    transition: transform 0.3s;
-    
-    /* Inventory Slot Look */
-    box-shadow: 
-        inset 4px 4px 0px 0px #fff,
-        inset -4px -4px 0px 0px #555;
-}
-
-.mc-card:hover {
-    transform: translateY(-10px);
-}
-
-/* News Section & Carousel */
-.news-section {
-    background-color: #241c15; /* Dark Dirt Color */
-    background-image: 
-        linear-gradient(rgba(255,255,255,0.03) 2px, transparent 2px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 2px, transparent 2px);
-    background-size: 32px 32px;
-    padding: 5rem 0;
-    border-top: 4px solid #5b8039; /* Grass top border */
     border-bottom: 4px solid #000;
     position: relative;
 }
 
 /* Add a grass layer on top */
-.news-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 16px;
-    background-color: #5b8039;
-    background-image: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1));
-    background-size: 20px 20px;
+
+
+.news-section-title, .features-section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-shadow: 5px 5px 5px rgba(0,0,0,1.8);
+}
+
+.news-section-subtitle, .features-section-subtitle {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+    font-weight: 450;
+    color: var(--mc-green);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
 /* New News Card Style (Grid Look) */
 .news-card-v2 {
     position: relative;
     background-color: #1a1a1a;
-    height: 320px;
     border: none;
     transition: transform 0.2s;
     cursor: pointer;
     overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .news-card-v2:hover {
@@ -554,41 +358,64 @@ body {
 
 .news-card-v2 img {
     width: 100%;
-    height: 60%;
+    aspect-ratio: 16/9;
     object-fit: cover;
     image-rendering: pixelated;
+    background-color: #2a2a2a;
 }
 
 .news-card-content {
     padding: 15px;
     background-color: #1a1a1a;
-    height: 40%;
+    flex: 1;
     position: relative;
 }
 
 .news-tag {
     background-color: #fff;
     color: #000;
-    font-weight: bold;
-    font-size: 0.8rem;
-    padding: 2px 6px;
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 5px 12px;
     text-transform: uppercase;
     display: inline-block;
-    margin-bottom: 8px;
-    font-family: sans-serif; /* More readable for small tag */
+    margin-bottom: 10px;
+    font-family: 'Pixelify Sans', cursive;
+    letter-spacing: 1.5px;
 }
 
 .news-card-title {
     color: #fff;
-    font-size: 1.2rem;
-    line-height: 1.2;
-    margin-bottom: 5px;
-    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-shadow: 2px 2px 0px #000;
+    font-family: 'Pixelify Sans', cursive;
+    letter-spacing: 0.3px;
+}
+
+.news-card-v2:hover .news-card-subtitle {
+    max-height: 150px;
+    opacity: 1;
+    margin-top: 8px;
 }
 
 .news-card-subtitle {
-    color: #aaa;
-    font-size: 0.9rem;
+    color: #e5e5e5;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 0px #000;
+    font-family: 'Pixelify Sans', cursive;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    
+    /* Hidden by default */
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
 }
 
 /* Trailers Section */
@@ -707,5 +534,98 @@ body {
         width: 100%;
         margin-bottom: 10px;
     }
+    /* Override width for the navbar toggler specifically */
+    .navbar-toggler-custom.btn-minecraft {
+        width: auto !important;
+        margin-bottom: 0 !important;
+    }
+}/* Utility Classes for removed inline styles */
+.navbar-toggler-custom {
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    display: inline-block;
+    cursor: pointer;
 }
+
+.navbar-toggler-icon-custom {
+    color: white;
+}
+
+.trailers-title {
+    font-size: 3rem;
+    text-shadow: 3px 3px 0 #000;
+    color: #fff;
+}
+
+.footer-logo {
+    height: 50px;
+    margin-bottom: 20px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+/* Modal Styles */
+.modal-content {
+    background-color: #c6c6c6; /* Light grey like inventory */
+    border: 4px solid #000;
+    border-radius: 0;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000;
+}
+
+.modal-header {
+    border-bottom: 4px solid #000;
+    background-color: #8b8b8b; /* Darker grey header */
+    color: #fff;
+    border-radius: 0;
+}
+
+.modal-title {
+    text-shadow: 2px 2px 0 #000;
+}
+
+.btn-close {
+    filter: invert(1);
+    opacity: 1;
+}
+
+.modal-body {
+    padding: 2rem;
+    background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h64v64H0z' fill='%23c6c6c6'/%3E%3Cpath d='M0 0h2v2H0zM4 4h2v2H4zM8 0h2v2H8zM12 4h2v2H12z' fill='%23b0b0b0' fill-opacity='0.4'/%3E%3C/svg%3E");
+}
+
+.modal-body .btn {
+    border: 2px solid #000;
+    border-radius: 0;
+    text-transform: uppercase;
+    box-shadow: 
+        inset 2px 2px 0px 0px rgba(255,255,255,0.5),
+        inset -2px -2px 0px 0px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+    transition: all 0.1s;
+}
+
+.modal-body .btn-success {
+    background-color: var(--mc-grass);
+    border-color: #000;
+}
+
+.modal-body .btn-success:hover {
+    background-color: #6da146;
+    transform: scale(1.02);
+}
+
+.modal-body .btn-outline-success {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+}
+
+.modal-body .btn-outline-success:hover {
+    background-color: var(--mc-grass);
+    color: #fff;
+    border-color: #000;
+}
+
 
