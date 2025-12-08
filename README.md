@@ -2,11 +2,11 @@
 
 Una landing page temática de Minecraft moderna y responsiva, desarrollada como parte del Proyecto de Programación Web 1.
 
-## 📝 Descripción
+##  Descripción
 
-Este proyecto es una recreación de una página de aterrizaje (landing page) para Minecraft, diseñada para ser visualmente atractiva y funcional en dispositivos móviles y de escritorio. Utiliza **Bootstrap 5** para la estructura y componentes base, junto con **CSS personalizado** para lograr la estética característica de Minecraft (fuentes pixeladas, texturas, colores, botones estilo vóxel).
+Este proyecto es una recreación de la landing page para Minecraft, diseñada para ser visualmente atractiva y funcional en dispositivos móviles y de escritorio. Utiliza **Bootstrap 5** para la estructura y componentes base, junto con **CSS personalizado** para lograr la estética característica de Minecraft (fuentes pixeladas, texturas, colores, botones estilo vóxel).
 
-## ✨ Características Principales
+## Características Principales
 
 *   **Diseño Responsivo:** Adaptable a móviles, tablets y escritorio.
 *   **Navbar Personalizado:** Menú de navegación fijo con fondo degradado y menú hamburguesa animado para móviles.
@@ -17,14 +17,14 @@ Este proyecto es una recreación de una página de aterrizaje (landing page) par
 *   **Modal de Compra:** Ventana emergente estilizada con el tema del juego (bordes pixelados, texturas) para la selección de plataforma.
 *   **Estilos Temáticos:** Uso de variables CSS para la paleta de colores de Minecraft (`--mc-grass`, `--mc-dirt`, etc.) y fuentes pixeladas (`Pixelify Sans`).
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 *   **HTML5:** Estructura semántica y accesible.
 *   **CSS3:** Estilos personalizados, animaciones, Flexbox y Grid.
 *   **Bootstrap 5.3.0:** Framework CSS para el sistema de rejilla y componentes (Navbar, Carousel, Modal).
 *   **JavaScript:** Lógica mínima para el cierre automático del menú móvil y funcionalidad de Bootstrap.
 
-## 📂 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 Proyecto_PW1/
@@ -36,13 +36,13 @@ Proyecto_PW1/
 └── README.md            # Documentación del proyecto
 ```
 
-## 🚀 Cómo Ejecutar
+##  Cómo Ejecutar
 
 1.  Clona este repositorio o descarga los archivos.
 2.  Abre el archivo `index.html` en tu navegador web favorito.
 3.  ¡Disfruta de la experiencia!
 
-## ⚠️ Disclaimer
+##  Disclaimer
 
 Este es un proyecto educativo sin fines de lucro. **Minecraft** es una marca registrada de **Mojang Studios / Microsoft**. Todos los recursos gráficos (imágenes, logos) son propiedad de sus respectivos dueños y se utilizan aquí bajo el concepto de "Fair Use" para fines de aprendizaje.
 
