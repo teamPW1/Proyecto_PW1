@@ -5,30 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minecraft Landing Page</title>
     
-    <!-- Bootstrap 5 CSS -->
+    <!-- =======================================================
+        RESOURCES & STYLES
+        ======================================================= -->
+    <!-- Bootstrap 5 CSS: Provides the grid system and core components -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Styles -->
+    <!-- Custom Styles: Overrides Bootstrap and applies Minecraft theme -->
     <link rel="stylesheet" href="assets/styles/index-styles.css">
     
-    <!-- Favicon (Optional placeholder) -->
+    <!-- Favicon: Site icon displayed in the browser tab -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🟩</text></svg>">
 </head>
 <body>
 
-    <!-- Navbar (CSS-Only Toggle) -->
+    <!-- =======================================================
+        NAVIGATION BAR
+        ======================================================= -->
+    <!-- Fixed-top navbar with gradient background and mobile toggle -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
+            <!-- Brand Logo -->
             <a class="navbar-brand" href="#">
                 <img src="assets/images/Global-Header-Logo_.svg" alt="Logo Minecraft">
             </a>
             
-            <!-- Checkbox Hack for Mobile Menu -->
+            <!-- Mobile Menu Toggle (Checkbox Hack) -->
+            <!-- Uses a hidden checkbox to control menu state without heavy JS -->
             <input type="checkbox" id="nav-toggle" class="d-none">
             <label for="nav-toggle" class="navbar-toggler btn-minecraft d-lg-none navbar-toggler-custom">
                 <span class="navbar-toggler-icon-custom">☰</span>
             </label>
 
+            <!-- Navigation Links -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -40,6 +49,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#noticias">Noticias</a>
                     </li>
+                    <!-- Community Dropdown Menu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Comunidad</a>
                         <ul class="dropdown-menu">
@@ -54,14 +64,19 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- =======================================================
+        HERO SECTION
+        ======================================================= -->
+    <!-- Fullscreen intro section with background image and CTA buttons -->
     <section id="inicio" class="hero-section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <p class="hero-subtitle">Explora mundos infinitos y construye todo lo que puedas imaginar. La aventura original te espera.</p>
                     <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <!-- Triggers the Buy Modal -->
                         <button class="btn-minecraft" data-bs-toggle="modal" data-bs-target="#buyModal">Obtener Minecraft</button>
+                        <!-- Smooth scroll to Trailers section -->
                         <a class="btn-minecraft btn-secondary-mc" href="#trailers">Ver el trailer</a>
                     </div>
                 </div>
@@ -69,7 +84,10 @@
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- =======================================================
+        FEATURES SECTION (GAME MODES)
+        ======================================================= -->
+    <!-- Carousel displaying different game modes (Creative, Survival, Multiplayer) -->
     <section id="modos" class="features-section">
         <div class="container">
             <div class="text-center mb-5">
@@ -79,8 +97,10 @@
             
             <div class="row justify-content-center">
                 <div class="col-lg-10">
+                    <!-- Bootstrap Carousel with Custom Styling -->
                     <div id="modesCarousel" class="carousel slide mc-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
+                            <!-- Slide 1: Creative -->
                             <div class="carousel-item active">
                                 <img src="assets/images/mc-creative-mode.jpeg" class="d-block w-100" alt="Modo Creativo">
                                 <div class="carousel-caption mc-caption">
@@ -88,6 +108,7 @@
                                     <p>Recursos ilimitados. Vuela libremente y construye estructuras colosales sin preocuparte por monstruos o hambre.</p>
                                 </div>
                             </div>
+                            <!-- Slide 2: Survival -->
                             <div class="carousel-item">
                                 <img src="assets/images/mc-survival-mode.jpeg" class="d-block w-100" alt="Modo Supervivencia">
                                 <div class="carousel-caption mc-caption">
@@ -95,6 +116,7 @@
                                     <p>Recolecta recursos, fabrica herramientas y defiéndete de las criaturas de la noche. ¿Podrás sobrevivir?</p>
                                 </div>
                             </div>
+                            <!-- Slide 3: Multiplayer -->
                             <div class="carousel-item">
                                 <img src="assets/images/mc-multiplayer-mode.webp" class="d-block w-100" alt="Multijugador">
                                 <div class="carousel-caption mc-caption">
@@ -103,13 +125,15 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- Hidden Default Indicators (Replaced by custom arrows) -->
                         <div class="carousel-indicators d-none">
                             <button type="button" data-bs-target="#modesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#modesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#modesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
                         
-                        <!-- Custom Navigation Arrows -->
+                        <!-- Custom Navigation Arrows (Bottom Right) -->
                         <div class="carousel-controls-custom">
                             <button class="btn-nav-arrow" type="button" data-bs-target="#modesCarousel" data-bs-slide="prev">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
@@ -128,7 +152,10 @@
         </div>
     </section>
 
-    <!-- News Section -->
+    <!-- =======================================================
+        NEWS SECTION
+        ======================================================= -->
+    <!-- Grid of news cards with hover effects -->
     <section id="noticias" class="news-section">
         <div class="container">
             <div class="text-center mb-5">
@@ -244,24 +271,30 @@
         </div>
     </section>
 
-    <!-- Trailers Section -->
+    <!-- =======================================================
+        TRAILERS SECTION
+        ======================================================= -->
+    <!-- Embedded YouTube trailer with responsive container -->
     <section id="trailers" class="trailers-section">
-    <div class="container">
-        <h2 class="mb-5 trailers-title">TRAILERS OFICIALES</h2>
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="ratio ratio-16x9 shadow-lg rounded">
-                    <iframe 
-                    src="https://www.youtube.com/embed/jLuJbSjo7NA?si=m1O6Jwj8uSgUZUPz" 
-                    title="Minecraft Trailer" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+        <div class="container">
+            <h2 class="mb-5 trailers-title">TRAILERS OFICIALES</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="ratio ratio-16x9 shadow-lg rounded">
+                        <iframe 
+                        src="https://www.youtube.com/embed/jLuJbSjo7NA?si=m1O6Jwj8uSgUZUPz" 
+                        title="Minecraft Trailer" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Footer -->
+    <!-- =======================================================
+        FOOTER
+        ======================================================= -->
+    <!-- Site footer with external links and copyright info -->
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -279,7 +312,10 @@
         </div>
     </footer>
 
-    <!-- Buy Modal -->
+    <!-- =======================================================
+        MODALS
+        ======================================================= -->
+    <!-- Buy Modal: Triggered by "Obtener Minecraft" button -->
     <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content text-dark">
@@ -300,10 +336,13 @@
     </div>
     
     
-    <!-- Bootstrap 5 JS Bundle -->
+    <!-- =======================================================
+        SCRIPTS
+        ======================================================= -->
+    <!-- Bootstrap 5 JS Bundle: Includes Popper.js for dropdowns and tooltips -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom Script for Mobile Menu Auto-Collapse -->
+    <!-- Custom Script: Auto-collapses mobile menu when a link is clicked -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Select nav-links that are NOT dropdown toggles
