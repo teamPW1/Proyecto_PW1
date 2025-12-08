@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft Server - Únete a la Aventura</title>
+    <title>Minecraft Landing Page</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Custom Minecraft Styles -->
+    <!-- Styles -->
     <link rel="stylesheet" href="assets/styles/index-styles.css">
     
     <!-- Favicon (Optional placeholder) -->
@@ -25,8 +25,8 @@
             
             <!-- Checkbox Hack for Mobile Menu -->
             <input type="checkbox" id="nav-toggle" class="d-none">
-            <label for="nav-toggle" class="navbar-toggler btn-minecraft d-lg-none" style="padding: 5px 10px; font-size: 1.2rem; display: inline-block; cursor: pointer;">
-                <span style="color: white;">☰</span>
+            <label for="nav-toggle" class="navbar-toggler btn-minecraft d-lg-none navbar-toggler-custom">
+                <span class="navbar-toggler-icon-custom">☰</span>
             </label>
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -35,13 +35,19 @@
                         <a class="nav-link" href="#inicio">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#caracteristicas">Características</a>
+                        <a class="nav-link" href="#modos">Modos De Juego</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#acerca">Acerca de</a>
+                        <a class="nav-link" href="#noticias">Noticias</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#comunidad">Comunidad</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Comunidad</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://discord.com/invite/minecraft" target="_blank">Discord</a></li>
+                            <li><a class="dropdown-item" href="https://www.minecraft.net/es-mx/article/minecraft-community-art-gallery" target="_blank">Arte</a></li>
+                            <li><a class="dropdown-item" href="https://minecraft.wiki/" target="_blank">Wiki</a></li>
+                            <li><a class="dropdown-item" href="https://www.curseforge.com/minecraft" target="_blank">Mods</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -53,69 +59,10 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <h1 class="hero-title">MINECRAFT</h1>
                     <p class="hero-subtitle">Explora mundos infinitos y construye todo lo que puedas imaginar. La aventura original te espera.</p>
                     <div class="d-flex justify-content-center gap-3 flex-wrap">
-                        <button class="btn-minecraft">Obtener Minecraft</button>
-                        <button class="btn-minecraft btn-secondary-mc">Iniciar Sesión</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- News Section with Carousel -->
-    <section id="noticias" class="news-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 style="font-size: 3rem; text-shadow: 3px 3px 0 #000; color: #fff;">NOTICIAS MÁS RECIENTES</h2>
-                <p style="font-size: 1.5rem; color: #ccc;">Las últimas novedades del universo Minecraft.</p>
-            </div>
-
-            <!-- News Cards Grid (New Design) -->
-            <div class="row g-4">
-                <!-- Card 1 -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="news-card-v2">
-                        <img src="assets/images/mc-copper-update.png" alt="Snapshot">
-                        <div class="news-card-content">
-                            <span class="news-tag">NEWS</span>
-                            <h4 class="news-card-title">Snapshot 24w45a</h4>
-                            <p class="news-card-subtitle">Java Edition Release Candidate</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="news-card-v2">
-                        <img src="assets/images/mc-education-portada.png" alt="Realms">
-                        <div class="news-card-content">
-                            <span class="news-tag">REALMS</span>
-                            <h4 class="news-card-title">Realms Plus: Noviembre</h4>
-                            <p class="news-card-subtitle">Nuevos mapas y skins disponibles.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="news-card-v2">
-                        <img src="assets/images/mc-dungeons-portada.png" alt="Dungeons">
-                        <div class="news-card-content">
-                            <span class="news-tag">MERCH</span>
-                            <h4 class="news-card-title">Colección de Invierno</h4>
-                            <p class="news-card-subtitle">¡Ropa oficial ya en la tienda!</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 (Added for 4-column grid) -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="news-card-v2">
-                        <img src="assets/images/mc-legends-portada.png" alt="Community">
-                        <div class="news-card-content">
-                            <span class="news-tag">COMMUNITY</span>
-                            <h4 class="news-card-title">Desafío de Construcción</h4>
-                            <p class="news-card-subtitle">Participa y gana premios exclusivos.</p>
-                        </div>
+                        <button class="btn-minecraft" data-bs-toggle="modal" data-bs-target="#buyModal">Obtener Minecraft</button>
+                        <a class="btn-minecraft btn-secondary-mc" href="#trailers">Ver el trailer</a>
                     </div>
                 </div>
             </div>
@@ -123,43 +70,173 @@
     </section>
 
     <!-- Features Section -->
-    <section id="caracteristicas" class="features-section">
+    <section id="modos" class="features-section">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 style="font-size: 3rem; text-shadow: 3px 3px 0 #000;">MODOS DE JUEGO</h2>
-                <p style="font-size: 1.5rem; color: #aaa;">Elige tu propia aventura.</p>
+                <h2 class="features-section-title">MODOS DE JUEGO</h2>
+                <p class="features-section-subtitle">Elige tu propia aventura.</p>
             </div>
             
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div id="modesCarousel" class="carousel slide mc-carousel" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/images/mc-creative-mode.jpeg" class="d-block w-100" alt="Modo Creativo">
+                                <div class="carousel-caption mc-caption">
+                                    <h3>Creativo</h3>
+                                    <p>Recursos ilimitados. Vuela libremente y construye estructuras colosales sin preocuparte por monstruos o hambre.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/mc-survival-mode.jpeg" class="d-block w-100" alt="Modo Supervivencia">
+                                <div class="carousel-caption mc-caption">
+                                    <h3>Supervivencia</h3>
+                                    <p>Recolecta recursos, fabrica herramientas y defiéndete de las criaturas de la noche. ¿Podrás sobrevivir?</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/mc-multiplayer-mode.webp" class="d-block w-100" alt="Multijugador">
+                                <div class="carousel-caption mc-caption">
+                                    <h3>Multijugador</h3>
+                                    <p>Únete a servidores masivos, juega minijuegos con amigos o colabora en proyectos de construcción épicos.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-indicators d-none">
+                            <button type="button" data-bs-target="#modesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#modesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#modesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        
+                        <!-- Custom Navigation Arrows -->
+                        <div class="carousel-controls-custom">
+                            <button class="btn-nav-arrow" type="button" data-bs-target="#modesCarousel" data-bs-slide="prev">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                                </svg>
+                            </button>
+                            <button class="btn-nav-arrow" type="button" data-bs-target="#modesCarousel" data-bs-slide="next">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="noticias" class="news-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="news-section-title">NOTICIAS MÁS RECIENTES</h2>
+                <p class="news-section-subtitle">Las últimas novedades del universo Minecraft.</p>
+            </div>
+            <!-- News Cards Grid (New Design) -->
             <div class="row g-4">
                 <!-- Card 1 -->
-                <div class="col-md-4">
-                    <div class="mc-card p-0">
-                        <img src="assets/images/mc-education-portada.png" class="w-100" style="height: 200px; object-fit: cover; border-bottom: 4px solid #000; image-rendering: pixelated;" alt="Modo Creativo">
-                        <div class="p-4">
-                            <h3 class="text-center">Creativo</h3>
-                            <p class="text-center">Recursos ilimitados. Vuela libremente y construye estructuras colosales sin preocuparte por monstruos o hambre.</p>
+                <div class="col-md-3 col-sm-6">
+                    <div class="news-card-v2">
+                        <img src="assets/images/mc-spear-update.avif" alt="mc-spear-update">
+                        <div class="news-card-content">
+                            <span class="news-tag">NEWS</span>
+                            <h4 class="news-card-title">Mounts of mayhem: The Conclusioning</h4>
+                            <p class="news-card-subtitle">Houndred of heroes, one loud ovation</p>
                         </div>
                     </div>
                 </div>
-                
                 <!-- Card 2 -->
-                <div class="col-md-4">
-                    <div class="mc-card p-0">
-                        <img src="assets/images/mc-principal-portada.png" class="w-100" style="height: 200px; object-fit: cover; border-bottom: 4px solid #000; image-rendering: pixelated;" alt="Modo Supervivencia">
-                        <div class="p-4">
-                            <h3 class="text-center">Supervivencia</h3>
-                            <p class="text-center">Recolecta recursos, fabrica herramientas y defiéndete de las criaturas de la noche. ¿Podrás sobrevivir?</p>
+                <div class="col-md-3 col-sm-6">
+                    <div class="news-card-v2">
+                        <img src="assets/images/mc-camel-update.avif" alt="mc-camel-update">
+                        <div class="news-card-content">
+                            <span class="news-tag">NEWS</span>
+                            <h4 class="news-card-title">Minecraft 1.21.11 Release Candidate 2</h4>
+                            <p class="news-card-subtitle">Minecraft Java Release Candidate</p>
                         </div>
                     </div>
                 </div>
-                
                 <!-- Card 3 -->
-                <div class="col-md-4">
-                    <div class="mc-card p-0">
-                        <img src="assets/images/mc-mods-preview.png" class="w-100" style="height: 200px; object-fit: cover; border-bottom: 4px solid #000; image-rendering: pixelated;" alt="Multijugador">
-                        <div class="p-4">
-                            <h3 class="text-center">Multijugador</h3>
-                            <p class="text-center">Únete a servidores masivos, juega minijuegos con amigos o colabora en proyectos de construcción épicos.</p>
+                <div class="col-md-3 col-sm-6">
+                    <div class="news-card-v2">
+                        <img src="assets/images/mc-guide-gifts.jpg" alt="Dungeons">
+                        <div class="news-card-content">
+                            <span class="news-tag">MERCH</span>
+                            <h4 class="news-card-title">A Festive Gift Guide: 2025 Edition</h4>
+                            <p class="news-card-subtitle">This holiday season, find the perfect Minecraft-themed gifts for everyone on your list.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4  -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="news-card-v2">
+                        <img src="assets/images/mc-drowned-update.avif" alt="Community">
+                        <div class="news-card-content">
+                            <span class="news-tag">NEWS</span>
+                            <h4 class="news-card-title">Minecraft 1.21.11 Release Candidate 1</h4>
+                            <p class="news-card-subtitle">Minecraft Java Release Candidate</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="news-card-v2">
+                        <img src="assets/images/mc-spear-mayhem.avif" alt="Community">
+                        <div class="news-card-content">
+                            <span class="news-tag">NEWS</span>
+                            <h4 class="news-card-title">Mounts of Mayhem: Finale Arena</h4>
+                            <p class="news-card-subtitle">The denouement awaits!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="news-card-v2">
+                        <img src="assets/images/mc-alex-ocean.avif" alt="Community">
+                        <div class="news-card-content">
+                            <span class="news-tag">NEWS</span>
+                            <h4 class="news-card-title">Minecraft 1.21.11 Pre-Release 5</h4>
+                            <p class="news-card-subtitle">A Minecraft Java Pre-Release</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="news-card-v2">
+                        <img src="assets/images/mc-numbering-system.jpg" alt="NEWS">
+                        <div class="news-card-content">
+                            <span class="news-tag">NEWS</span>
+                            <h4 class="news-card-title">Minecraft's new version numbering system</h4>
+                            <p class="news-card-subtitle">A small change for clarity</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="news-card-v2">
+                        <img src="assets/images/mc-marketplace-img.jpg" alt="MARKETPLACE">
+                        <div class="news-card-content">
+                            <span class="news-tag">MARKETPLACE</span>
+                            <h4 class="news-card-title">Marketplace Content December 2025</h4>
+                            <p class="news-card-subtitle">Beware the full moon as this months's content is revealed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9  -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="news-card-v2">
+                        <img src="assets/images/mc-huggy-pack.jpg" alt="Marketplace">
+                        <div class="news-card-content">
+                            <span class="news-tag">MARKETPLACE</span>
+                            <h4 class="news-card-title">Let's Play: Huggy & Friends</h4>
+                            <p class="news-card-subtitle">Oh no no no no no no please no </p>
                         </div>
                     </div>
                 </div>
@@ -169,34 +246,79 @@
 
     <!-- Trailers Section -->
     <section id="trailers" class="trailers-section">
-        <div class="container">
-            <h2 class="mb-5" style="font-size: 3rem; text-shadow: 3px 3px 0 #000; color: #fff;">TRAILERS OFICIALES</h2>
-            <div class="video-container">
-                <img src="assets/images/mc-biome-hero-banner.png" alt="Video Thumbnail" class="video-thumbnail">
-                <div class="play-btn"></div>
+    <div class="container">
+        <h2 class="mb-5 trailers-title">TRAILERS OFICIALES</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="ratio ratio-16x9 shadow-lg rounded">
+                    <iframe 
+                    src="https://www.youtube.com/embed/jLuJbSjo7NA?si=m1O6Jwj8uSgUZUPz" 
+                    title="Minecraft Trailer" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <img src="assets/images/Global-Header-Logo_.svg" alt="Logo Footer" style="height: 50px; margin-bottom: 20px; filter: grayscale(100%); opacity: 0.7;">
+                    <img src="assets/images/Global-Header-Logo_.svg" alt="Logo Footer" class="footer-logo">
                     <div class="footer-links">
-                        <a href="#">Reglas</a>
-                        <a href="#">Tienda</a>
-                        <a href="#">Votar</a>
-                        <a href="#">Soporte</a>
+                        <a href="https://www.minecraft.net/es-es/marketplace" target="_blank" rel="noopener noreferrer">Tienda</a>
+                        <a href="https://help.minecraft.net/hc/en-us" target="_blank" rel="noopener noreferrer">Soporte</a>
                     </div>
                     <p class="copyright">
-                        &copy; 2025 Minecraft Server Project. No afiliado con Mojang AB.
+                        &copy; 2025 Minecraft Landing Page Project. No afiliado con Mojang AB. Utilizado con fines educativos.
                     </p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Buy Modal -->
+    <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-dark">
+                <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold">Elige tu plataforma</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p>Selecciona dónde quieres jugar para continuar tu aventura:</p>
+                <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-success fw-bold">Escritorio (Java & Bedrock)</a>
+                    <a href="#" class="btn btn-outline-success fw-bold">Consolas (Xbox/PS/Switch)</a>
+                    <a href="#" class="btn btn-outline-success fw-bold">Móvil (iOS/Android)</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Script for Mobile Menu Auto-Collapse -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select nav-links that are NOT dropdown toggles
+            const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+            const navToggle = document.getElementById('nav-toggle');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Uncheck the checkbox to close the menu
+                    if (navToggle.checked) {
+                        navToggle.checked = false;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
