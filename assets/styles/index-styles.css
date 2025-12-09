@@ -12,6 +12,7 @@
     --mc-sky: #a0d3e8;
     --mc-text: #ffffff;
     --mc-shadow: rgba(0, 0, 0, 0.6);
+    --mc-accent: #0084fff3;
 }
 
 html {
@@ -61,7 +62,7 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--mc-grass) !important;
+    color: var(--mc-accent) !important;
     text-shadow: 2px 2px 0 #3f3f3f;
 }
 
@@ -83,7 +84,7 @@ body {
 }
 
 .dropdown-item:hover, .dropdown-item:focus{
-    background-color: var(--mc-grass);
+    background-color: var(--mc-accent);
     color: black;
 }
 
@@ -141,8 +142,8 @@ body {
     box-shadow: 
         0 8px 15px rgba(0, 0, 0, 0.2),
         inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    color: var(--mc-grass);
-    border-color: var(--mc-grass);
+    color: var(--mc-accent);
+    border-color: var(--mc-accent);
 }
 
 .hero-section .btn-minecraft:active {
@@ -155,7 +156,7 @@ body {
 
 /* Minecraft Buttons (Global/Fallback) */
 .btn-minecraft {
-    background-color: var(--mc-grass);
+    background-color: var(--mc-accent);
     color: white;
     border: none;
     padding: 12px 25px;
@@ -295,7 +296,7 @@ body {
 
 .btn-nav-arrow:hover {
     transform: scale(1.2);
-    color: var(--mc-diamond);
+    color: var(--mc-accent);
     opacity: 1;
 }
 
@@ -332,7 +333,7 @@ body {
     font-size: 1.3rem;
     margin-bottom: 4rem;
     font-weight: 450;
-    color: var(--mc-green);
+    color: var(--mc-accent);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
@@ -353,7 +354,7 @@ body {
 .news-card-v2:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    outline: 4px solid var(--mc-grass);
+    outline: 4px solid var(--mc-accent);
 }
 
 .news-card-v2 img {
@@ -402,7 +403,7 @@ body {
 }
 
 .btn-minecraft-card {
-    background-color: var(--mc-green);
+    background-color: var(--mc-accent);
     color: var(--mc-text);
     border: none;
     padding: 8px 8px;
@@ -493,7 +494,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: var(--mc-grass);
+    color: var(--mc-accent);
     text-decoration: underline;
 }
 
@@ -603,7 +604,7 @@ body {
 }
 
 .modal-body .btn-success {
-    background-color: var(--mc-grass);
+    background-color: var(--mc-accent);
     border-color: #000;
 }
 
@@ -619,7 +620,7 @@ body {
 }
 
 .modal-body .btn-outline-success:hover {
-    background-color: var(--mc-grass);
+    background-color: var(--mc-accent);
     color: #fff;
     border-color: #000;
 }
